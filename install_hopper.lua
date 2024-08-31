@@ -1,10 +1,10 @@
 local githubBaseUrl = "https://raw.githubusercontent.com"
 local username = "WatoLua"
 local defaultBranch = "main"
-local files = {}
-files["cc_tweaked-turtle-utils"] = ["environment.lua", "inventory.lua"],
-files["cc_tweaked-turtle-hopper"] = ["hopper.lua"]
-
+local files = {
+    "cc_tweaked-turtle-utils" = {"environment.lua", "inventory.lua"},
+    "cc_tweaked-turtle-hopper" = {"hopper.lua"}
+}
 local function buildUrl(repositoryName, filePath)
     return githubBaseUrl.."/"..username.."/"..repositoryName.."/"..defaultBranch.."/"..filePath
 end
