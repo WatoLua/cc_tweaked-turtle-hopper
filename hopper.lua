@@ -1,5 +1,5 @@
 local args = {...}
-local inventoryUtils = require("/utils/inventory")
+local inventoryUtils = require("/utils/environment")
 
 function checkArgs()
     if #args ~= 3 then
