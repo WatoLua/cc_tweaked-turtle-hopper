@@ -20,6 +20,7 @@ local function split(str, sep)
 end
 
 local function moveFileInTree(file)
+    print(file)
     path = split(file, "/")
     for i=1, #path-1 do
         if not fs.exists(path[i]) then
@@ -28,7 +29,9 @@ local function moveFileInTree(file)
         shell.setDir(shell.dir().."/"..path[i])
     end
     shell.setDir("/")
-    fs.move(path[#path], file)
+    if #path > 1 then
+        fs.move(path[#path], file)
+    end
 end
 
 local function downloadFiles()
