@@ -2,20 +2,23 @@ local args = {...}
 local inventoryUtils = require("/utils/inventory")
 
 function checkArgs()
-    if #args ~= 4 then
+    if #args ~= 3 then
         print("Error : Missing args on execution.")
         print("You need to run this program as follows :")
-        print(args[1].." <side to suck> <side to drop> [repeat]")
+        print(shell.getRunningProgram().." <side to suck> <side to drop> [repeat]")
         print("repeat parameter can be negative for infinite execution")
-        shell.exit()
+        return false
     end
+    return true
 end
 
 function main()
-    checkArgs()
+    if not checkArgs() then
+        return
+    end
 
-    while i < args[4] or args[4] < 0 do
-        err = inventoryUtils.suckAt(args[2])
-        inventoryUtils.dropAt(args[3])
+    while i < args[3] or args[3] < 0 do
+        err = inventoryUtils.suckAt(args[1])
+        inventoryUtils.dropAt(args[2])
     end
 end
