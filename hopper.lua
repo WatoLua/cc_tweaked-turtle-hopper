@@ -16,11 +16,9 @@ function main()
     if not checkArgs() then
         return
     end
-    i = 0
+
     while i < args[3] or args[3] < 0 do
-        err = inventoryUtils.suckAt(args[1])
-        inventoryUtils.dropAt(args[2])
+        err = environmentUtils.suckAt(args[1])
+        environmentUtils.dropAt(args[2])
     end
 end
-
-main()
