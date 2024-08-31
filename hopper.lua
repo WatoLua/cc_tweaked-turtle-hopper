@@ -22,3 +22,5 @@ function main()
         inventoryUtils.dropAt(args[2])
     end
 end
+
+main()
