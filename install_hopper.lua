@@ -10,15 +10,6 @@ local function buildUrl(repositoryName, filePath)
     return githubBaseUrl.."/"..username.."/"..repositoryName.."/"..defaultBranch.."/"..filePath
 end
 
-local function downloadFiles()
-    for repo, file in pairs(files) do
-        for i=1, #file do
-            shell.run("wget "..buildUrl(repo, file[i]))
-            moveFileInTree(file[i])
-        end
-    end
-end
-
 local function split(str, sep)
     local result = {}
     local regex = ("([^%s]+)"):format(sep)
@@ -38,6 +29,15 @@ local function moveFileInTree(file)
     end
     shell.setDir("/")
     fs.move(path[#path], file)
+end
+
+local function downloadFiles()
+    for repo, file in pairs(files) do
+        for i=1, #file do
+            shell.run("wget "..buildUrl(repo, file[i]))
+            moveFileInTree(file[i])
+        end
+    end
 end
 
 function main()
