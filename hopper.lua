@@ -34,3 +34,4 @@ function main()
         end
     end
 end
+main()
