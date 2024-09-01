@@ -16,9 +16,20 @@ function main()
     if not checkArgs() then
         return
     end
+    i = 0
+    maxLoop = tonumber(args[3])
 
-    while i < args[3] or args[3] < 0 do
-        err = environmentUtils.suckAt(args[1])
-        environmentUtils.dropAt(args[2])
+    ::continue::
+    while i < maxLoop or maxLoop < 0 do
+        for i = 1, 16 do
+            turtle.select(i)
+            found = environmentUtils.suckAt(args[1])
+            if not found and i == 1 then
+                goto continue
+            end
+            environmentUtils.dropAt(args[2])
+        if maxLoop > 0 then
+            i = i + 1
+        end
     end
 end
