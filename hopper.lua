@@ -29,6 +29,7 @@ function main()
             end
         end
         for slot = 1, 16 do
+            turtle.select(slot)
             environmentUtils.dropAt(args[2])
         end
         if maxLoop > 0 then
