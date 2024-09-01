@@ -25,7 +25,11 @@ function main()
         if not found then
             goto continue
         end
-        environmentUtils.dropAt(args[2])
+        ::drop::
+        ok = environmentUtils.dropAt(args[2])
+        if not ok then
+            goto drop
+        end
         if maxLoop > 0 then
             i = i + 1
         end
