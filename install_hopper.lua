@@ -2,7 +2,7 @@ local githubBaseUrl = "https://raw.githubusercontent.com"
 local username = "WatoLua"
 local defaultBranch = "main"
 local files = {
-    ["cc_tweaked-turtle-utils"] = {"utils/environment.lua", "utils/inventory.lua"},
+    ["cc_tweaked-utils"] = {"utils/environment.lua", "utils/inventory.lua"},
     ["cc_tweaked-turtle-hopper"] = {"hopper.lua"}
 }
 
