@@ -27,10 +27,12 @@ function main()
             if not found and slot == 1 then
                 goto continue
             end
+        end
+        for slot = 1, 16 do
             environmentUtils.dropAt(args[2])
-            if maxLoop > 0 then
-                i = i + 1
-            end
+        end
+        if maxLoop > 0 then
+            i = i + 1
         end
     end
 end
