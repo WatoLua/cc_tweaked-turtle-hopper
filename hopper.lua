@@ -28,8 +28,9 @@ function main()
                 goto continue
             end
             environmentUtils.dropAt(args[2])
-        if maxLoop > 0 then
-            i = i + 1
+            if maxLoop > 0 then
+                i = i + 1
+            end
         end
     end
 end
