@@ -21,10 +21,10 @@ function main()
 
     ::continue::
     while i < maxLoop or maxLoop < 0 do
-        for i = 1, 16 do
-            turtle.select(i)
+        for slot = 1, 16 do
+            turtle.select(slot)
             found = environmentUtils.suckAt(args[1])
-            if not found and i == 1 then
+            if not found and slot == 1 then
                 goto continue
             end
             environmentUtils.dropAt(args[2])
