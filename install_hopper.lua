@@ -23,7 +23,7 @@ local function moveFileInTree(file)
     path = split(file, "/")
     for i=1, #path-1 do
         if not fs.exists(path[i]) then
-            fs.makeDir(path[i])
+            fs.makeDir("/"..shell.dir().."/"..path[i])
         end
         shell.setDir("/"..shell.dir().."/"..path[i])
     end
